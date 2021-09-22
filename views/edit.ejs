@@ -1,0 +1,39 @@
+<%- include("layout/header.ejs") %>
+
+  <%- include("layout/nav.ejs") %>
+
+    <div class="ui container">
+
+      <br>
+
+      <br>
+      <h5>Please fill your correct details</h5>
+      <form id="edit" action="/edit/<%- singleData._id%>" class="ui form" method="POST">
+        <div class="ui three fields">
+          <div class="field">
+            <label for="student-name" class="ui label green">Enter your Name:</label>
+            <input type="text" name="stname" value="<%- singleData.name%>">
+          </div>
+          <div class="field">
+            <label for="depart" class="ui label green">Enter your Department:</label>
+            <input type="text" name="depart" value="<%-singleData.depart %>">
+          </div>
+          <div class="field">
+            <label for="phone-no" class="ui label green">Enter your Phone Number:</label>
+            <input type="tel" name="phoneNo" value="<%- singleData.phoneNo%>">
+          </div>
+        </div>
+        <div class="ui fluid fields">
+          <input type="submit" value="updtate" class="ui button green fluid">
+        </div>
+      </form>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br><br>
+
+
+
+    <% include("layout/footer.ejs") %>

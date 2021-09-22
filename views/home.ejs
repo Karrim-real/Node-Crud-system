@@ -1,0 +1,76 @@
+<%- include("layout/header.ejs") %>
+
+<%- include("layout/nav.ejs") %>
+
+<div class="ui container">
+
+  <br>
+  
+  <br>
+  <h5>Please fill your correct details</h5>
+  <form action="/add" class="ui form" method="POST">
+    <div class="ui three fields">
+      <div class="field">
+        <label for="student-name" class="ui label green">Enter your Name:</label>
+        <br>
+        <input type="text" name="stname" placeholder="E.g Ajanikoko Mich Joel">
+      </div>
+            <div class="field">
+              <label for="depart" class="ui label green">Enter your Department:</label>
+              <br>
+              <input type="text" name="depart" placeholder="Enter your Department">
+            </div>
+                  <div class="field">
+                    <label for="phone-no" class="ui label green">Enter your Phone Number:</label>
+                    <br>
+                    <input type="tel" name="phoneNo" placeholder="E.g 081234567890">
+                  </div>
+    </div>
+    <div class="ui fluid fields">
+      <input type="submit" value="Submit" class="ui button green fluid">
+    </div>
+  </form>
+<br>
+<br>
+<br>
+  <table class="ui table">
+    <thead>
+      <th>Student Name</th>
+      <th>Department</th>
+      <th>Phone Number</th>
+      <th>Edit</th>
+      <th>Delete</th>
+
+      
+    </thead>
+
+    <tbody>
+      
+        
+          <% stData.forEach((data)=>{%>
+            <tr>
+              <td><%- data.name %> </td>
+              <td><%- data.depart %></td>
+              <td><%- data.phoneNo %></td>
+              <td> <a href="/edit/<%= data._id %>" class="ui purple button"><i class="edit outline icon"></i></a></td>
+              <td> <a href="/del/<%= data._id %>" class="ui red button"><i class="delete icon"></i></a></td>
+              </tr>
+         <% }) %>
+          
+      
+    </tbody>
+  </table>
+</div>
+<br>
+<br>
+<br>
+<br><br>
+
+
+
+<% include("layout/footer.ejs") %>
+
+  
+
+
+  
